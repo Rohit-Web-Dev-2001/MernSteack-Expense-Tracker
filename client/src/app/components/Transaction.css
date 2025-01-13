@@ -1,0 +1,146 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
+}
+
+.container {
+  background: #ece8e8;
+  border: 5px solid white;
+  border-radius: 50px;
+  padding: 10px; /* Increased from 20px */
+  width: 100%;
+  height: 900px;
+  max-width: 990px; /* Increased from 600px */
+  text-align: center;
+  max-height: 550px; /* Define the height where scrolling should start */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px; /* Prevent scrollbar overlap */
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.headercontainer {
+  padding: 20px; /* Increased from 20px */
+  border-radius: 5px; /* Increased from 10px */
+  max-width: 100%; /* Increased from 600px */
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px; /* Increased from 20px */
+  color: #4caf50;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* Increased from 2px */
+  font-size: 2.5em; /* Increased from 1.6em */
+}
+
+.totals {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.total {
+  background: #ece8e8;
+  border: 5px solid white;
+  border-radius: 50px;
+  padding: 30px;
+  flex: 1;
+  margin: 0 10px;
+  
+}
+
+.total h2 {
+  margin: 0;
+  color: #4caf50;
+  font-size: 1.5em;
+}
+
+.total p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.transaction {
+  background: #f4f4f4;
+  padding: 18px; /* Increased from 15px */
+  margin: 15px 0; /* Increased from 10px 0 */
+  border-radius: 15px; /* Increased from 10px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 7.5px 22.5px rgba(0, 0, 0, 0.1); /* Increased from 0 5px 15px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction:hover {
+  transform: scale(1); /* Increased from 1.02 */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); /* Increased from 0 10px 30px */
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transaction-timestamp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.transaction-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.transaction-id,
+.transaction-date,
+.transaction-time {
+  font-size: 1em; /* Increased from 0.9em */
+  color: #555;
+}
+
+.transaction-buttons {
+  position: absolute;
+  right: 15px; /* Increased from 10px */
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.transaction:hover .transaction-buttons {
+  display: flex;
+  gap: 15px; /* Increased from 10px */
+}
+
+.transaction-buttons button {
+  padding: 7.5px 15px; /* Increased from 5px 10px */
+  border: none;
+  border-radius: 7.5px; /* Increased from 5px */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn {
+  background-color: #008cba;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #007b9e;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
