@@ -82,7 +82,7 @@ export const TransactionProvider = ({ children }) => {
 
   const showExpenseTransactions = async (body) => {
     try {
-      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/getOnlyExepense",body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/epxense/getOnlyExepense",body);
       dispatch({ type: "GET_TRANSACTIONS", payload:res.data });
       
     } catch (error) {
