@@ -43,7 +43,7 @@ export const AuthContextProvider = ({ children }) => {
   // Authenitcator methods
   const SignUp = async (body) => {
     try {
-      const res = await axios.post("http://localhost:8000/auth/SignUp", body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/auth/SignUp", body);
       alert(res.data);
       return res.data;
     } catch (error) {
@@ -53,7 +53,7 @@ export const AuthContextProvider = ({ children }) => {
   // SignIN method
   const SignIn = async (body) => {
     try {
-      const res = await axios.post("http://localhost:8000/auth/SignIn", body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/auth/SignIn", body);
       if (res.data === "User not founded") {
         return res.data;
       } else {
