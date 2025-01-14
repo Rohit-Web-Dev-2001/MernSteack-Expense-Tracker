@@ -12,7 +12,7 @@ const app = express();
 const PORT = 8000
 app.use(bodyParser.json({ 
   origin: 'https://expense-tracker-phi-lake.vercel.app/',  
-  methods: {"GET","POST","PUT","DELETE"},
+  methods: 'GET,POST,PUT,DELETE',
   credentials: true,
 }));
 app.use(cors());
