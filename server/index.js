@@ -8,7 +8,7 @@ const AuthRouter = require("./Routes/auth");
 dotenv.config({ path: "./config/config.env" });
 const corsOptions = { 
   origin: 'https://expense-tracker-phi-lake.vercel.app/',  
-  methods: 'GET,POST,PUT,DELETE', 
+  methods: {"GET","POST","PUT","DELETE"},
   credentials: true,
 }
 connectDB();
