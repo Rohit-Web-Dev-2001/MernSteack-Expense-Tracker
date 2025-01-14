@@ -11,11 +11,7 @@ connectDB();
 const app = express();
 const PORT = 8000
 app.use(bodyParser.json());
-app.use(cors( { 
-  origin: 'https://expense-tracker-phi-lake.vercel.app/',  
-  methods: {"GET","POST","PUT","DELETE"},
-  credentials: true,
-}));
+app.use(cors());
 app.use("/auth", AuthRouter);
 app.use("/epxense", ExpanseRouter);
 app.get("/",(req,res)=>{
