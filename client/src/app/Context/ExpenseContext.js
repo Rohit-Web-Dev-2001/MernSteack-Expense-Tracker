@@ -62,7 +62,7 @@ export const TransactionProvider = ({ children }) => {
   // beckend actions for fetching data from Db
   const getTransactions = async (body) => {
     try {
-      const res = await axios.post("http://localhost:8000/epxense/getExpense",body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/getExpense",body);
       dispatch({ type: "GET_TRANSACTIONS", payload:res.data });
       
     } catch (error) {
@@ -72,7 +72,7 @@ export const TransactionProvider = ({ children }) => {
 
   const showIncomeTransactions = async (body) => {
     try {
-      const res = await axios.post("http://localhost:8000/epxense/getOnlyIncome",body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/epxense/getOnlyIncome",body);
       dispatch({ type: "GET_TRANSACTIONS", payload:res.data });
       
     } catch (error) {
@@ -82,7 +82,7 @@ export const TransactionProvider = ({ children }) => {
 
   const showExpenseTransactions = async (body) => {
     try {
-      const res = await axios.post("http://localhost:8000/epxense/getOnlyExepense",body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/getOnlyExepense",body);
       dispatch({ type: "GET_TRANSACTIONS", payload:res.data });
       
     } catch (error) {
@@ -92,7 +92,7 @@ export const TransactionProvider = ({ children }) => {
   const addTransaction = async (transaction) => {
     try {
       const res = await axios.post(
-        "http://localhost:8000/epxense/addExpense",
+        "https://mernstack-expense-tracker-beckend.vercel.app/epxense/addExpense",
         transaction
       );
       dispatch({ type: "ADD_TRANSACTION", payload: res.data });
@@ -104,7 +104,7 @@ export const TransactionProvider = ({ children }) => {
   // Deleting Transaction
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/epxense/deleteExpense/${id}`);
+      await axios.delete(`https://mernstack-expense-tracker-beckend.vercel.app/epxense/deleteExpense/${id}`);
 
       dispatch({
         type: "DELETE_TRANSACTION",
@@ -119,7 +119,7 @@ export const TransactionProvider = ({ children }) => {
   const updateTransaction = async (id, Updatedtransaction) => {
     try {
       await axios.put(
-        `http://localhost:8000/epxense/updateExpense/${id}`,
+        `https://mernstack-expense-tracker-beckend.vercel.app/epxense/updateExpense/${id}`,
         Updatedtransaction
       );
 
