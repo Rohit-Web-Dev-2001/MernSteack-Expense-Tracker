@@ -62,7 +62,7 @@ export const TransactionProvider = ({ children }) => {
   // beckend actions for fetching data from Db
   const getTransactions = async (body) => {
     try {
-      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/getExpense",body);
+      const res = await axios.post("https://mernstack-expense-tracker-beckend.vercel.app/epxense/getExpense",body);
       dispatch({ type: "GET_TRANSACTIONS", payload:res.data });
       
     } catch (error) {
