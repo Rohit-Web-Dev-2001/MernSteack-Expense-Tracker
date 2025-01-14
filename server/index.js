@@ -6,11 +6,16 @@ const { connectDB } = require("./config/db");
 const bodyParser = require("body-parser");
 const AuthRouter = require("./Routes/auth");
 dotenv.config({ path: "./config/config.env" });
+const corsOptions = { 
+  origin: 'https://expense-tracker-phi-lake.vercel.app/',  
+  methods: 'GET,POST,PUT,DELETE', 
+  credentials: true,
+}
 connectDB();
 const app = express();
 const PORT = 8000
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use("/auth", AuthRouter);
 app.use("/epxense", ExpanseRouter);
 app.get("/",(req,res)=>{
