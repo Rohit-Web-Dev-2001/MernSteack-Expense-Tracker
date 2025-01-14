@@ -19,7 +19,7 @@ app.use(cors(corsOptions));
 app.use("/auth", AuthRouter);
 app.use("/epxense", ExpanseRouter);
 app.get("/",(req,res)=>{
-  res.json({msg:"Server is ready to use"})
+  res.json({msg:"SERVER IS READY TO USE"})
 })
 app.listen(PORT, () => {
   console.log(`Server Started ${PORT}`);
