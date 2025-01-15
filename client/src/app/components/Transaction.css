@@ -66,7 +66,7 @@ h1 {
 
 .transaction {
   background: #f4f4f4;
-  padding: 18px; /* Increased from 15px */
+  padding: 14px; /* Increased from 15px */
   margin: 15px 0; /* Increased from 10px 0 */
   border-radius: 15px; /* Increased from 10px */
   display: flex;
