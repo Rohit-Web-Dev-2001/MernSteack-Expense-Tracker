@@ -28,6 +28,21 @@ const TransactionList = (props) => {
     }
   }, [transactions]);
 
+ // State for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const transactionsPerPage = 5;
+
+  // Calculate total number of pages
+  const totalPages = Math.ceil(transactions.length / transactionsPerPage);
+
+  // Get current transactions
+  const indexOfLastTransaction = currentPage * transactionsPerPage;
+  const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
+  const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   let totalbalance = 0;
   let totalincome = 0;
   let totalexpense = 0;
@@ -36,7 +51,6 @@ const TransactionList = (props) => {
       totalincome += entry.Amount;
       totalbalance += entry.Amount;
     } else {
-     
       totalbalance -= entry.Amount;
       totalexpense += entry.Amount;
     }
@@ -65,30 +79,14 @@ const TransactionList = (props) => {
         </div>
       </div>
       <div class="container shadow-lg">
-        <div class="transaction-list">
-          {/* <div class="transaction">
-            <div class="transaction-details">
-              <span class="transaction-name text-warning">Salary</span>
-              <span class="transaction-id text-success">
-                Amount: 2000,<span className="text-danger"> Type: Income</span>
-              </span>
-            </div>
-            <div class="transaction-timestamp">
-              <span class="transaction-date text-black-50">2024-12-18</span>
-              <span class="transaction-time text-black-50">21:18</span>
-            </div>
-            <div class="transaction-buttons">
-              <button class="update-btn">Update</button>
-              <button class="delete-btn">Delete</button>
-            </div>
-          </div> */}
-
-          {transactions == "" ? (
+      <div className="transaction-list">
+          {currentTransactions.length === 0 ? (
             <h2 className="text-dark">No Transaction To Show</h2>
           ) : (
-            transactions.map((items) => {
+            currentTransactions.map((items) => {
               return (
                 <TransactionItems
+                  key={items.id}
                   items={items}
                   setupdatetransaction={setupdatetransaction}
                   setID={setID}
@@ -96,6 +94,25 @@ const TransactionList = (props) => {
               );
             })
           )}
+        </div>
+        <div className="contianer-fluid d-flex justify-content-center align-content-center ">
+        <div className="pagination w-25  d-flex justify-content-center align-content-center gap-2" >
+          <button className="btn btn-sm btn-outline-warning shadow" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+            Previous
+          </button>
+          {[...Array(totalPages)].map((_, index) => (
+            <button 
+              key={index + 1}
+              onClick={() => paginate(index + 1)}
+              className={currentPage === index + 1 ? "active btn btn-sm btn-outline-warning shadow" : "btn btn-sm btn-outline-warning shadow"}
+            >
+              {index + 1}
+            </button>
+          ))}
+          <buttonc className="btn btn-sm btn-outline-warning shadow" onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages}>
+            Next
+          </buttonc>
+        </div>
         </div>
       </div>
     </>
