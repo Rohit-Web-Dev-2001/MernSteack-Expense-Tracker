@@ -11,7 +11,7 @@ const Navigation = (props) => {
       <div className="nav-list px-4">
         <div className="d-flex gap-2 text-dark">
             <i class="bi bi-house" />
-            <h5 onClick={()=>{router.push('/')}} >Go To Home</h5>
+            <h5 onClick={()=>{router.push('https://portfolio-gamma-puce-64.vercel.app/')}} >Go To Home</h5>
         </div>
 
         <div className="d-flex gap-2 text-dark">
