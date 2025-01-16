@@ -1,11 +1,21 @@
 import React, { useContext } from "react";
 import { ExpenseContext } from "../Context/ExpenseContext";
+import style from "./Modal.css";
 
 const TransactionItems = (props) => {
   const { deleteTransaction } = useContext(ExpenseContext);
-
   const { setID, setupdatetransaction, items, setFormData, formData } = props;
+  const [modalMessage, setModalMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleDeleteClick = () => {
+    setModalMessage("Are you sure you want to delete this transaction?");
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalMessage("");
+  };
   return (
     <div class="transaction" key={items._id}>
       <div class="transaction-details">
@@ -38,7 +48,8 @@ const TransactionItems = (props) => {
             if (
               window.confirm("Do you want to delete this transaction") == true
             ) {
-              deleteTransaction(items._id);
+              setIsModalOpen(true);
+              handleDeleteClick();
             }
           }}
         >
@@ -46,6 +57,33 @@ const TransactionItems = (props) => {
         </button>
       </div>
     </div>
+     <div
+        className="modal11"
+        style={{
+          display: `${isModalOpen ? "block" : "none"} `,
+        }}
+      >
+        {" "}
+
+        {/* Modal  */}
+        <div className="modal1-content">
+          <p className="text-center">{modalMessage}</p>
+          <div className="d-flex justify-content-end gap-2">
+            <button
+              className="close1 btn btn-outline-warning"
+              onClick={() => {
+                deleteTransaction(items._id);
+                setIsModalOpen(false);
+              }}
+            >
+              Confirm
+            </button>{" "}
+            <button className="close1 btn btn-outline-danger" onClick={closeModal}>
+              Cencel
+            </button>{" "}
+          </div>
+        </div>{" "}
+      </div>
   );
 };
 
