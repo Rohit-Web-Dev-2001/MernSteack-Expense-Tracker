@@ -49,20 +49,15 @@ const TransactionItems = (props) => {
         </button>
       </div>
     </div>
-     <div
-        className="modal11"
-        style={{
-          display: `${isModalOpen ? "block" : "none"} `,
-        }}
-      >
+     <div className="modal11"  style={{display: `${isModalOpen ? "block" : "none"} `,}} >
         {" "}
 
         {/* Modal  */}
-        <div className="modal1-content">
-          <p className="text-center">{modalMessage}</p>
-          <div className="d-flex justify-content-end gap-2">
+        <div class="modal1-content">
+          <p class="text-center">{modalMessage}</p>
+          <div class="d-flex justify-content-end gap-2">
             <button
-              className="close1 btn btn-outline-warning"
+              class="close1 btn btn-outline-warning"
               onClick={() => {
                 deleteTransaction(items._id);
                 setIsModalOpen(false);
@@ -70,7 +65,7 @@ const TransactionItems = (props) => {
             >
               Confirm
             </button>{" "}
-            <button className="close1 btn btn-outline-danger" onClick={closeModal}>
+            <button class="close1 btn btn-outline-danger" onClick={closeModal}>
               Cencel
             </button>{" "}
           </div>
