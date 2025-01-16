@@ -41,6 +41,7 @@ const TransactionItems = (props) => {
           class="delete-btn"
           onClick={() => {
               setIsModalOpen(true);
+              
              }
           }
         >
