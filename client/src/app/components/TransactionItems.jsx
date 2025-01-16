@@ -7,11 +7,6 @@ const TransactionItems = (props) => {
   const { setID, setupdatetransaction, items, setFormData, formData } = props;
   const [modalMessage, setModalMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleDeleteClick = () => {
-    setModalMessage("Are you sure you want to delete this transaction?");
-    setIsModalOpen(true);
-  };
-
   const closeModal = () => {
     setIsModalOpen(false);
     setModalMessage("");
@@ -45,11 +40,8 @@ const TransactionItems = (props) => {
         <button
           class="delete-btn"
           onClick={() => {
-            if (
-              window.confirm("Do you want to delete this transaction") == true
-            ) {
               setIsModalOpen(true);
-              handleDeleteClick();
+           
             }
           }}
         >
