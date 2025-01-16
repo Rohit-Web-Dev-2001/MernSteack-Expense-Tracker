@@ -49,8 +49,8 @@ const TransactionItems = (props) => {
         </button>
       </div>
     </div>
-     <div class="modal11"  style={{display: `${isModalOpen ? "block" : "none"} `,}} >
-        {" "}
+     // <div class="modal11"  style={{display: `${isModalOpen ? "block" : "none"} `,}} >
+    
 
         {/* Modal  */}
         <div class="modal1-content">
@@ -70,7 +70,7 @@ const TransactionItems = (props) => {
             </button>{" "}
           </div>
         </div>{" "}
-      </div>
+      // </div>
   );
 };
 
