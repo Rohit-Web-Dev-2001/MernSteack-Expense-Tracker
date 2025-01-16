@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import { ExpenseContext } from "../Context/ExpenseContext";
-import style from "./Modal.css";
 
 const TransactionItems = (props) => {
   const { deleteTransaction } = useContext(ExpenseContext);
   const { setID, setupdatetransaction, items, setFormData, formData } = props;
-  const [modalMessage, setModalMessage] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalMessage("");
-  };
+  
   return (
     <div class="transaction" key={items._id}>
       <div class="transaction-details">
@@ -40,37 +34,16 @@ const TransactionItems = (props) => {
         <button
           class="delete-btn"
           onClick={() => {
-              setIsModalOpen(true);
-              
-             }
-          }
-        >
+                deleteTransaction(items._id);
+                         }
+                  }>
           Delete
         </button>
       </div>
     </div>
-     // <div class="modal11"  style={{display: `${isModalOpen ? "block" : "none"} `,}} >
     
 
-        {/* Modal  */}
-        <div class="modal1-content">
-          <p class="text-center">{modalMessage}</p>
-          <div class="d-flex justify-content-end gap-2">
-            <button
-              class="close1 btn btn-outline-warning"
-              onClick={() => {
-                deleteTransaction(items._id);
-                setIsModalOpen(false);
-              }}
-            >
-              Confirm
-            </button>{" "}
-            <button class="close1 btn btn-outline-danger" onClick={closeModal}>
-              Cencel
-            </button>{" "}
-          </div>
-        </div>{" "}
-      // </div>
+    
   );
 };
 
