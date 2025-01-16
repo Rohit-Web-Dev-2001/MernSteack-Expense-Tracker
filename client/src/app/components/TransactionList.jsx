@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import style from "./Transaction.css";
+import Style from "./Transaction.css";
 import TransactionItems from "./TransactionItems";
 import { ExpenseContext } from "../Context/ExpenseContext";
 import { AuthContext } from "../Context/AuthContext";
