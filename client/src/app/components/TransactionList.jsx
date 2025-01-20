@@ -97,9 +97,7 @@ const TransactionList = (props) => {
         </div>
         <div className="contianer-fluid d-flex justify-content-center align-content-center ">
         <div className="pagination w-25  d-flex justify-content-center align-content-center gap-2" >
-          <button className="btn btn-sm btn-outline-warning shadow" onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
-            Previous
-          </button>
+        
           {[...Array(totalPages)].map((_, index) => (
             <button 
               key={index + 1}
@@ -109,9 +107,7 @@ const TransactionList = (props) => {
               {index + 1}
             </button>
           ))}
-          <buttonc className="btn btn-sm btn-outline-warning shadow" onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages}>
-            Next
-          </buttonc>
+         
         </div>
         </div>
       </div>
