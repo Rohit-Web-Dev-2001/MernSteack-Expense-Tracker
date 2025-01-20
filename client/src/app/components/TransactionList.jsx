@@ -98,7 +98,9 @@ const TransactionList = (props) => {
         <div className="contianer-fluid d-flex justify-content-center align-content-center ">
         <div className="pagination w-25  d-flex justify-content-center align-content-center gap-2" >
         
-          {[...Array(totalPages)].map((_, index) => (
+          { transactions.length>5 ?
+            
+            [...Array(totalPages)].map((_, index) => (
             <button 
               key={index + 1}
               onClick={() => paginate(index + 1)}
@@ -106,7 +108,7 @@ const TransactionList = (props) => {
             >
               {index + 1}
             </button>
-          ))}
+          )) :""}
          
         </div>
         </div>
