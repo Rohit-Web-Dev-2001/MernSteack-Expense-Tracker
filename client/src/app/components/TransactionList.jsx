@@ -42,7 +42,7 @@ const TransactionList = (props) => {
 
   // Function to sort expenses by date
 const sortExpensesByDate = (currentTransactions) => {
-  return expenses.sort((a, b) => new Date(b.date) - new Date(a.date));
+  return currentTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
 };
 
     const sortedExpenses = sortExpensesByDate(currentTransactions);
