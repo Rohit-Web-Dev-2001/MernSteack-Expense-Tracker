@@ -40,6 +40,12 @@ const TransactionList = (props) => {
   const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
   const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
 
+  // Function to sort expenses by date
+const sortExpensesByDate = (currentTransactions) => {
+  return expenses.sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+
+    const sortedExpenses = sortExpensesByDate(currentTransactions);
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -80,10 +86,10 @@ const TransactionList = (props) => {
       </div>
       <div class="container shadow-lg">
       <div className="transaction-list">
-          {currentTransactions.length === 0 ? (
+          {sortedExpenses.length === 0 ? (
             <h2 className="text-dark">No Transaction To Show</h2>
           ) : (
-            currentTransactions.map((items) => {
+            sortedExpenses.map((items) => {
               return (
                 <TransactionItems
                   key={items.id}
