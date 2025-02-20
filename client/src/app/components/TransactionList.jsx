@@ -68,15 +68,15 @@ const sortExpensesByDate = (currentTransactions) => {
         <div class="totals">
           <div class="total income shadow-lg">
             <h5 className="text-warning">Total Income</h5>
-            <p id="total-income">$ {totalincome}.00</p>
+            <p id="total-income">₹ {totalincome}.00</p>
           </div>
           <div class="total expenses shadow-lg">
             <h5 className="text-danger">Total Expenses</h5>
-            <p id="total-expenses">$ {totalexpense}.00</p>
+            <p id="total-expenses">₹ {totalexpense}.00</p>
           </div>
           <div class="total balance  text-success shadow-lg">
             <h5>Total Balance</h5>
-            <p id="total-balance">$ {totalbalance}.00</p>
+            <p id="total-balance">₹ {totalbalance}.00</p>
           </div>
           <div class="total balance shadow-lg">
             <h5>Hello,</h5>
