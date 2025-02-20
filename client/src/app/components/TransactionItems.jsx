@@ -22,7 +22,7 @@ const TransactionItems = (props) => {
         <div class="transaction-details">
           <span class="transaction-name text-warning">{items.Description}</span>
           <span class="transaction-id text-success">
-            Amount: $ {items.Amount}.00,
+            Amount: ₹ {items.Amount}.00,
             <span className="text-danger"> Type: {items.TransactionType}</span>
           </span>
         </div>
