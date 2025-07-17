@@ -13,7 +13,7 @@ body {
   height: 900px;
   max-width: 990px; /* Increased from 600px */
   text-align: center;
-  max-height: 550px; /* Define the height where scrolling should start */
+  max-height: 500px; /* Define the height where scrolling should start */
   overflow-y: auto; /* Enable vertical scrolling */
   padding-right: 10px; /* Prevent scrollbar overlap */
 }

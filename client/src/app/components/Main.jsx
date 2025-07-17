@@ -10,12 +10,10 @@ const Main = () => {
   const [userLoggediN, setuserLoggediN] = useState(null);
   return (
     <>
-      {AuthData.userId==''? (
+      {AuthData.userId == "" ? (
         <Auth setuserLoggediN={setuserLoggediN} />
-
       ) : (
         <Expense userLoggediN={userLoggediN} />
-
       )}
       {/* <Expense /> */}
     </>
